@@ -1,0 +1,48 @@
+.backgroundColor {
+    -fx-background-color: linear-gradient(to right, E72582, ECB31F);
+}
+
+.buttons{
+    -fx-background-color:  F5F5F5;
+    -fx-border-color:  000000;
+    -fx-border-radius: 9;
+    -fx-border-width: 3;
+    -fx-border-style: solid;
+}
+
+.buttons:hover{
+    -fx-background-color:  E5E5E5;
+    -fx-cursor: pointer;
+}
+
+.buttons:pressed{
+    -fx-background-color:  B2B2B2;
+    -fx-cursor: pointer;
+}
+
+.comboBox{
+    -fx-background-color:  F5F5F5;
+    -fx-font-size: 16;
+    -fx-border-color:  000000;
+    -fx-border-radius: 9;
+    -fx-border-width: 3;
+    -fx-border-style: solid;
+}
+
+.comboBox:hover{
+    -fx-background-color:  E5E5E5;
+    -fx-cursor: pointer;
+}
+
+.comboBox:pressed{
+    -fx-background-color:  B2B2B2;
+    -fx-cursor: pointer;
+}
+
+.inputs{
+    -fx-background-color:  F5F5F5;
+    -fx-border-color:  000000;
+    -fx-border-radius: 9;
+    -fx-border-width: 3;
+    -fx-border-style: solid;
+}

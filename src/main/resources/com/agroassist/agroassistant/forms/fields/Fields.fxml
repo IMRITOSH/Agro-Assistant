@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="700.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.agroassist.agroassistant.controllers.fields.FieldsController">
+    <children>
+        <Pane prefHeight="234.0" prefWidth="1080.0" styleClass="backgroundColor" stylesheets="@../../styles/main.css">
+            <children>
+                <Label layoutX="464.0" layoutY="75.0" text="Поля">
+                    <font>
+                        <Font size="64.0" />
+                    </font>
+                </Label>
+            </children>
+        </Pane>
+        <TableView fx:id="TableFields" layoutX="69.0" layoutY="303.0" prefHeight="329.0" prefWidth="966.0">
+            <columns>
+                <TableColumn fx:id="ColumnID" prefWidth="75.0" text="ID" />
+                <TableColumn fx:id="ColumnFieldNumber" prefWidth="175.0" text="Номер Поля" />
+            <TableColumn fx:id="ColumnArea" prefWidth="175.0" text="Площадь га" />
+            <TableColumn fx:id="ColumnCrop" prefWidth="175.0" text="Культура" />
+            <TableColumn fx:id="ColumnKind" prefWidth="175.0" text="Сорт" />
+            </columns>
+        </TableView>
+        <Button fx:id="buttonAddField" layoutX="460.0" layoutY="251.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="157.0" styleClass="buttons" stylesheets="@../../styles/main.css" text="Добавить">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </Button>
+        <Button fx:id="buttonEditField" layoutX="660.0" layoutY="251.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="157.0" styleClass="buttons" stylesheets="@../../styles/main.css" text="Изменить">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </Button>
+        <Button fx:id="buttonDeleteField" layoutX="860.0" layoutY="251.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="157.0" styleClass="buttons" stylesheets="@../../styles/main.css" text="Удалить">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </Button>
+      <Button fx:id="buttonBack" layoutX="849.0" layoutY="650.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="200.0" styleClass="buttons" stylesheets="@../../styles/main.css" text="Назад">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+    </children>
+</AnchorPane>

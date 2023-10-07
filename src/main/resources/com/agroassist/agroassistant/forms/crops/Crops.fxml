@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="700.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.agroassist.agroassistant.controllers.crops.CropsController">
+   <children>
+      <Pane prefHeight="234.0" prefWidth="1080.0" styleClass="backgroundColor" stylesheets="@../../styles/main.css">
+         <children>
+            <Label layoutX="426.0" layoutY="71.0" text="Урожай">
+               <font>
+                  <Font size="64.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <TableView layoutX="69.0" layoutY="303.0" prefHeight="329.0" prefWidth="966.0">
+        <columns>
+          <TableColumn prefWidth="75.0" text="C1" />
+          <TableColumn prefWidth="75.0" text="C2" />
+        </columns>
+      </TableView>
+      <ComboBox layoutX="67.0" layoutY="251.0" prefHeight="36.0" prefWidth="157.0" promptText="Поле" styleClass="comboBox" stylesheets="@../../styles/main.css" />
+      <MenuButton layoutX="267.0" layoutY="251.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="157.0" styleClass="comboBox" stylesheets="@../../styles/main.css" text="Год">
+        <items>
+          <MenuItem mnemonicParsing="false" text="Action 1" />
+          <MenuItem mnemonicParsing="false" text="Action 2" />
+        </items>
+         <font>
+            <Font size="14.0" />
+         </font>
+      </MenuButton>
+      <Button fx:id="buttonAddCrops" layoutX="460.0" layoutY="251.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="157.0" styleClass="buttons" stylesheets="@../../styles/main.css" text="Добавить">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Button fx:id="buttonEditCrops" layoutX="660.0" layoutY="251.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="157.0" styleClass="buttons" stylesheets="@../../styles/main.css" text="Изменить">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Button fx:id="buttonDeleteCrops" layoutX="860.0" layoutY="251.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="157.0" styleClass="buttons" stylesheets="@../../styles/main.css" text="Удалить">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Button fx:id="buttonCalculateCentner" layoutX="70.0" layoutY="649.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="179.0" styleClass="buttons" stylesheets="@../../styles/main.css" text="Рассчитать цетнеры">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Button fx:id="buttonCompare" layoutX="290.0" layoutY="649.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="240.0" styleClass="buttons" stylesheets="@../../styles/main.css" text="Сравнить затраты на семена">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Button fx:id="buttonCalculateGrow" layoutX="570.0" layoutY="649.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="208.0" styleClass="buttons" stylesheets="@../../styles/main.css" text="Рассчитать рост урожая">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Button fx:id="buttonBack" layoutX="860.0" layoutY="649.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="157.0" styleClass="buttons" stylesheets="@../../styles/main.css" text="Назад">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
