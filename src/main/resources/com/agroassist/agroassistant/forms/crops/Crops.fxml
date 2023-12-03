@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="700.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.agroassist.agroassistant.controllers.crops.CropsController">
+<AnchorPane prefHeight="700.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.agroassist.agroassistant.controllers.crops.CropsController">
    <children>
       <Pane prefHeight="234.0" prefWidth="1080.0" styleClass="backgroundColor" stylesheets="@../../styles/main.css">
          <children>
@@ -22,10 +22,14 @@
             </Label>
          </children>
       </Pane>
-      <TableView layoutX="69.0" layoutY="303.0" prefHeight="329.0" prefWidth="966.0">
+      <TableView fx:id="TableCrops" layoutX="69.0" layoutY="303.0" prefHeight="329.0" prefWidth="966.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="C1" />
-          <TableColumn prefWidth="75.0" text="C2" />
+          <TableColumn fx:id="ColumnID" prefWidth="75.0" text="ID" />
+          <TableColumn fx:id="ColumnFieldNumber" prefWidth="140.0" text="Номер поля" />
+            <TableColumn fx:id="ColumnBrutto" prefWidth="200.0" text="Брутто" />
+            <TableColumn fx:id="ColumnTara" prefWidth="200.0" text="Тара" />
+            <TableColumn fx:id="ColumnNetto" minWidth="7.0" prefWidth="200.0" text="Нетто" />
+            <TableColumn fx:id="ColumnDate" prefWidth="150.0" text="Дата" />
         </columns>
       </TableView>
       <ComboBox layoutX="67.0" layoutY="251.0" prefHeight="36.0" prefWidth="157.0" promptText="Поле" styleClass="comboBox" stylesheets="@../../styles/main.css" />

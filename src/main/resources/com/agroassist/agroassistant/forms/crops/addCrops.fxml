@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="700.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.agroassist.agroassistant.controllers.crops.AddCropsController">
+<AnchorPane prefHeight="700.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.agroassist.agroassistant.controllers.crops.AddCropsController">
     <children>
         <Pane prefHeight="234.0" prefWidth="1080.0" styleClass="backgroundColor" stylesheets="@../../styles/main.css">
             <children>
@@ -19,28 +18,27 @@
                 </Label>
             </children>
         </Pane>
-        <ComboBox fx:id="comboBoxField" layoutX="25.0" layoutY="326.0" prefHeight="42.0" prefWidth="241.0" promptText="Поле" styleClass="comboBox" stylesheets="@../../styles/main.css" />
-        <Button fx:id="buttoSaveCrops" layoutX="849.0" layoutY="253.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="200.0" styleClass="buttons" stylesheets="@../../styles/main.css" text="Сохранить">
+        <Button fx:id="buttonSaveCrops" layoutX="849.0" layoutY="253.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="200.0" styleClass="buttons" stylesheets="@../../styles/main.css" text="Сохранить">
             <font>
                 <Font size="16.0" />
             </font>
         </Button>
-        <TextField fx:id="textFieldBrutto" layoutX="25.0" layoutY="400.0" prefHeight="42.0" prefWidth="241.0" promptText="Брутто" styleClass="inputs" stylesheets="@../../styles/main.css">
+        <TextField fx:id="textFieldBrutto" layoutX="472.0" layoutY="348.0" prefHeight="42.0" prefWidth="241.0" promptText="Брутто" styleClass="inputs" stylesheets="@../../styles/main.css">
             <font>
                 <Font size="16.0" />
             </font>
         </TextField>
-        <TextField fx:id="textFieldTara" layoutX="325.0" layoutY="400.0" prefHeight="42.0" prefWidth="241.0" promptText="Тара" styleClass="inputs" stylesheets="@../../styles/main.css">
+        <TextField fx:id="textFieldTara" layoutX="472.0" layoutY="448.0" prefHeight="42.0" prefWidth="241.0" promptText="Тара" styleClass="inputs" stylesheets="@../../styles/main.css">
             <font>
                 <Font size="16.0" />
             </font>
         </TextField>
-        <TextField fx:id="textFieldNetto" layoutX="325.0" layoutY="326.0" prefHeight="42.0" prefWidth="241.0" promptText="Нетто" styleClass="inputs" stylesheets="@../../styles/main.css">
+        <TextField fx:id="textFieldNetto" layoutX="472.0" layoutY="548.0" prefHeight="42.0" prefWidth="241.0" promptText="Нетто" styleClass="inputs" stylesheets="@../../styles/main.css">
             <font>
                 <Font size="16.0" />
             </font>
         </TextField>
-        <TextField fx:id="textFieldYear" layoutX="625.0" layoutY="326.0" prefHeight="42.0" prefWidth="241.0" promptText="Год" styleClass="inputs" stylesheets="@../../styles/main.css">
+        <TextField fx:id="textFieldYear" layoutX="25.0" layoutY="448.0" prefHeight="42.0" prefWidth="241.0" promptText="Год" styleClass="inputs" stylesheets="@../../styles/main.css">
             <font>
                 <Font size="16.0" />
             </font>
@@ -50,5 +48,19 @@
             <Font size="16.0" />
          </font>
       </Button>
+      <Label fx:id="fieldNumberLabel" layoutX="25.0" layoutY="410.0" prefHeight="26.0" prefWidth="370.0" styleClass="labelError" stylesheets="@../../styles/main.css" visible="false" />
+      <Label fx:id="bruttoLabel" layoutX="472.0" layoutY="410.0" prefHeight="26.0" prefWidth="370.0" styleClass="labelError" stylesheets="@../../styles/main.css" textFill="#dd0505" visible="false" />
+      <Label fx:id="nettoLabel" layoutX="472.0" layoutY="610.0" prefHeight="26.0" prefWidth="370.0" styleClass="labelError" stylesheets="@../../styles/main.css" textFill="#dd0505" visible="false">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="taraLabel" layoutX="472.0" layoutY="510.0" prefHeight="26.0" prefWidth="370.0" styleClass="labelError" stylesheets="@../../styles/main.css" textFill="#dd0505" visible="false" />
+      <Label fx:id="dateLabel" layoutX="25.0" layoutY="510.0" prefHeight="26.0" prefWidth="370.0" styleClass="labelError" stylesheets="@../../styles/main.css" textFill="#dd0505" visible="false" />
+      <TextField fx:id="textFieldNumberField" layoutX="25.0" layoutY="348.0" prefHeight="42.0" prefWidth="241.0" promptText="Номер поля" styleClass="inputs" stylesheets="@../../styles/main.css">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </TextField>
     </children>
 </AnchorPane>

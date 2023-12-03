@@ -46,3 +46,8 @@
     -fx-border-width: 3;
     -fx-border-style: solid;
 }
+
+.labelError{
+    -fx-font-size: 14;
+    -fx-text-fill: red;
+}

@@ -1,5 +1,6 @@
 package com.agroassist.agroassistant.controllers;
 
+import com.agroassist.agroassistant.dao.DataBaseHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -8,7 +9,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class BaseController {
+public class BaseController extends DataBaseHandler {
 
     protected String basePath = "/com/agroassist/agroassistant/";
 

@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="700.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.agroassist.agroassistant.controllers.fields.FieldsController">
+<AnchorPane prefHeight="700.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.agroassist.agroassistant.controllers.fields.FieldsController">
     <children>
         <Pane prefHeight="234.0" prefWidth="1080.0" styleClass="backgroundColor" stylesheets="@../../styles/main.css">
             <children>
@@ -26,6 +26,7 @@
             <TableColumn fx:id="ColumnArea" prefWidth="175.0" text="Площадь га" />
             <TableColumn fx:id="ColumnCrop" prefWidth="175.0" text="Культура" />
             <TableColumn fx:id="ColumnKind" prefWidth="175.0" text="Сорт" />
+            <TableColumn fx:id="ColumnDate" prefWidth="151.0" text="Дата" />
             </columns>
         </TableView>
         <Button fx:id="buttonAddField" layoutX="460.0" layoutY="251.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="157.0" styleClass="buttons" stylesheets="@../../styles/main.css" text="Добавить">

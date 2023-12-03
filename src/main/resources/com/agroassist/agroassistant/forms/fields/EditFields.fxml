@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="700.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.agroassist.agroassistant.controllers.fields.EditFieldsController">
+<AnchorPane prefHeight="700.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.agroassist.agroassistant.controllers.fields.EditFieldsController">
     <children>
         <Pane prefHeight="234.0" prefWidth="1080.0" styleClass="backgroundColor" stylesheets="@../../styles/main.css">
             <children>
@@ -23,27 +23,27 @@
                 <Font size="16.0" />
             </font>
         </Button>
-        <TextField fx:id="textFieldNumberofField" layoutX="25.0" layoutY="400.0" prefHeight="42.0" prefWidth="241.0" promptText="Номер поля" styleClass="inputs" stylesheets="@../../styles/main.css">
+        <TextField fx:id="textFieldNumber" layoutX="25.0" layoutY="448.0" prefHeight="42.0" prefWidth="241.0" promptText="Номер поля" styleClass="inputs" stylesheets="@../../styles/main.css">
             <font>
                 <Font size="16.0" />
             </font>
         </TextField>
-        <TextField fx:id="textFieldCrop" layoutX="325.0" layoutY="400.0" prefHeight="42.0" prefWidth="241.0" promptText="Культура" styleClass="inputs" stylesheets="@../../styles/main.css">
+        <TextField fx:id="textFieldCrop" layoutX="472.0" layoutY="348.0" prefHeight="42.0" prefWidth="241.0" promptText="Культура" styleClass="inputs" stylesheets="@../../styles/main.css">
             <font>
                 <Font size="16.0" />
             </font>
         </TextField>
-        <TextField fx:id="textFieldArea" layoutX="325.0" layoutY="326.0" prefHeight="42.0" prefWidth="241.0" promptText="Площадь" styleClass="inputs" stylesheets="@../../styles/main.css">
+        <TextField fx:id="textFieldArea" layoutX="25.0" layoutY="548.0" prefHeight="42.0" prefWidth="241.0" promptText="Площадь" styleClass="inputs" stylesheets="@../../styles/main.css">
             <font>
                 <Font size="16.0" />
             </font>
         </TextField>
-        <TextField fx:id="textFieldSort" layoutX="625.0" layoutY="326.0" prefHeight="42.0" prefWidth="241.0" promptText="Сорт" styleClass="inputs" stylesheets="@../../styles/main.css">
+        <TextField fx:id="textFieldSort" layoutX="472.0" layoutY="448.0" prefHeight="42.0" prefWidth="241.0" promptText="Сорт" styleClass="inputs" stylesheets="@../../styles/main.css">
             <font>
                 <Font size="16.0" />
             </font>
         </TextField>
-      <TextField fx:id="textFieldID" layoutX="25.0" layoutY="326.0" prefHeight="42.0" prefWidth="241.0" promptText="ID" styleClass="inputs" stylesheets="@../../styles/main.css">
+      <TextField fx:id="textFieldID" disable="true" layoutX="25.0" layoutY="348.0" prefHeight="42.0" prefWidth="241.0" promptText="ID" styleClass="inputs" stylesheets="@../../styles/main.css">
          <font>
             <Font size="16.0" />
          </font>
@@ -53,10 +53,19 @@
             <Font size="16.0" />
          </font>
       </Button>
-      <TextField layoutX="625.0" layoutY="400.0" prefHeight="42.0" prefWidth="241.0" promptText="Год" styleClass="inputs" stylesheets="@../../styles/main.css">
+      <TextField fx:id="textFieldYear" layoutX="472.0" layoutY="548.0" prefHeight="42.0" prefWidth="241.0" promptText="Дата" styleClass="inputs" stylesheets="@../../styles/main.css">
          <font>
             <Font size="16.0" />
          </font>
       </TextField>
+      <Label fx:id="fieldNumberLabel" layoutX="25.0" layoutY="504.0" prefHeight="26.0" prefWidth="370.0" styleClass="labelError" stylesheets="@../../styles/main.css" visible="false" />
+      <Label fx:id="areaLabel" layoutX="25.0" layoutY="604.0" prefHeight="26.0" prefWidth="330.0" styleClass="labelError" stylesheets="@../../styles/main.css" textFill="#dd0505" visible="false" />
+      <Label fx:id="cropLabel" layoutX="472.0" layoutY="407.0" prefHeight="34.0" prefWidth="438.0" styleClass="labelError" stylesheets="@../../styles/main.css" textFill="#dd0505" visible="false">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="kindLabel" layoutX="472.0" layoutY="504.0" prefHeight="26.0" prefWidth="385.0" styleClass="labelError" stylesheets="@../../styles/main.css" textFill="#dd0505" visible="false" />
+      <Label fx:id="dateLabel" layoutX="472.0" layoutY="604.0" prefHeight="26.0" prefWidth="394.0" styleClass="labelError" stylesheets="@../../styles/main.css" textFill="#dd0505" visible="false" />
     </children>
 </AnchorPane>

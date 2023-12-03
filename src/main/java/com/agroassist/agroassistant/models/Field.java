@@ -1,17 +1,18 @@
 package com.agroassist.agroassistant.models;
 
 import java.time.Year;
+import java.util.Date;
 
 public class Field {
     private int id;
     private String fieldNumber;
-    private int area;
+    private Integer area;
     private String crop;
     private String kind;
-    private Year year;
+    private Date year;
 
-    public Field(int id, String fieldNumber, int area, String crop,
-                 String kind, Year year) {
+    public Field(int id, String fieldNumber, Integer area, String crop,
+                 String kind, Date year) {
         this.id = id;
         this.fieldNumber = fieldNumber;
         this.area = area;
@@ -38,7 +39,7 @@ public class Field {
         this.fieldNumber = fieldNumber;
     }
 
-    public int getArea() {
+    public Integer getArea() {
         return area;
     }
 
@@ -62,11 +63,11 @@ public class Field {
         this.kind = kind;
     }
 
-    public Year getYear() {
+    public Date getDate() {
         return year;
     }
 
-    public void setYear(Year year) {
+    public void setDate(Date year) {
         this.year = year;
     }
 }
