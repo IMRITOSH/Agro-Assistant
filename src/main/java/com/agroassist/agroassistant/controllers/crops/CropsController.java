@@ -2,7 +2,6 @@ package com.agroassist.agroassistant.controllers.crops;
 
 import com.agroassist.agroassistant.controllers.BaseController;
 import com.agroassist.agroassistant.models.Crop;
-import com.agroassist.agroassistant.models.Field;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.ObservableList;
@@ -46,9 +45,6 @@ public class CropsController extends BaseController {
     private Button buttonCalculateGrow;
 
     @FXML
-    private Button buttonCompare;
-
-    @FXML
     private Button buttonDeleteCrops;
 
     @FXML
@@ -60,55 +56,51 @@ public class CropsController extends BaseController {
     protected static int idCrop;
 
     @FXML
-    void initialize(){
+    void initialize() {
         ObservableList<Crop> cropsData = initData();
 
         // устанавливаем тип и значение которое должно хранится в колонке
-        ColumnID.setCellValueFactory(new PropertyValueFactory<Crop, Integer>("id"));
-        ColumnFieldNumber.setCellValueFactory(new PropertyValueFactory<Crop, String>("fieldNumber"));
-        ColumnBrutto.setCellValueFactory(new PropertyValueFactory<Crop, Integer>("brutto"));
-        ColumnTara.setCellValueFactory(new PropertyValueFactory<Crop, Integer>("tara"));
-        ColumnNetto.setCellValueFactory(new PropertyValueFactory<Crop, Integer>("netto"));
-        ColumnDate.setCellValueFactory(new PropertyValueFactory<Crop, Date>("date"));
+        setColumnsValue();
 
         // заполняем таблицу данными
         TableCrops.setItems(cropsData);
 
         TableView.TableViewSelectionModel<Crop> selectionModel = TableCrops.getSelectionModel();
-        selectionModel.selectedItemProperty().addListener(new ChangeListener<Crop>(){
+        selectionModel.selectedItemProperty().addListener(new ChangeListener<Crop>() {
 
-            public void changed(ObservableValue<? extends Crop> val, Crop oldVal, Crop newVal){
-                if(newVal != null){
+            public void changed(ObservableValue<? extends Crop> val, Crop oldVal, Crop newVal) {
+                if (newVal != null) {
                     idCrop = newVal.getId();
                 }
             }
         });
 
-        buttonDeleteCrops.setOnAction(event ->{
-            if (deleteCrop(idCrop)){
+        buttonDeleteCrops.setOnAction(event -> {
+            if (deleteCrop(idCrop)) {
                 System.out.println("Данные об урожае удалены");
             }
 
-            ObservableList<Crop> cropsData1 = initData();
-
             // устанавливаем тип и значение которое должно хранится в колонке
-            ColumnID.setCellValueFactory(new PropertyValueFactory<Crop, Integer>("id"));
-            ColumnFieldNumber.setCellValueFactory(new PropertyValueFactory<Crop, String>("fieldNumber"));
-            ColumnBrutto.setCellValueFactory(new PropertyValueFactory<Crop, Integer>("brutto"));
-            ColumnTara.setCellValueFactory(new PropertyValueFactory<Crop, Integer>("tara"));
-            ColumnNetto.setCellValueFactory(new PropertyValueFactory<Crop, Integer>("netto"));
-            ColumnDate.setCellValueFactory(new PropertyValueFactory<Crop, Date>("date"));
+            setColumnsValue();
 
             // заполняем таблицу данными
-            TableCrops.setItems(cropsData1);
+            TableCrops.setItems(initData());
         });
 
         buttonAddCrops.setOnAction(event -> {
-            setScene(buttonAddCrops, basePath + "forms/crops/addCrops.fxml");
+            setScene(buttonAddCrops, basePath + "forms/crops/AddCrops.fxml");
         });
 
         buttonEditCrops.setOnAction(event -> {
             setScene(buttonEditCrops, basePath + "forms/crops/EditCrops.fxml");
+        });
+
+        buttonCalculateCentner.setOnAction(event -> {
+            setScene(buttonCalculateGrow, basePath + "forms/crops/CalculationCentner.fxml");
+        });
+
+        buttonCalculateGrow.setOnAction(event -> {
+            setScene(buttonCalculateGrow, basePath + "forms/crops/CalculationCropGrowth.fxml");
         });
 
         buttonBack.setOnAction(event -> {
@@ -116,7 +108,16 @@ public class CropsController extends BaseController {
         });
     }
 
-    private ObservableList<Crop> initData(){
+    private ObservableList<Crop> initData() {
         return getCrops();
+    }
+
+    private void setColumnsValue() {
+        ColumnID.setCellValueFactory(new PropertyValueFactory<Crop, Integer>("id"));
+        ColumnFieldNumber.setCellValueFactory(new PropertyValueFactory<Crop, String>("fieldNumber"));
+        ColumnBrutto.setCellValueFactory(new PropertyValueFactory<Crop, Integer>("brutto"));
+        ColumnTara.setCellValueFactory(new PropertyValueFactory<Crop, Integer>("tara"));
+        ColumnNetto.setCellValueFactory(new PropertyValueFactory<Crop, Integer>("netto"));
+        ColumnDate.setCellValueFactory(new PropertyValueFactory<Crop, Date>("date"));
     }
 }

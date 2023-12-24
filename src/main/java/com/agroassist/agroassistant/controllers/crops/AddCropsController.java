@@ -2,10 +2,8 @@ package com.agroassist.agroassistant.controllers.crops;
 
 import com.agroassist.agroassistant.controllers.BaseController;
 import com.agroassist.agroassistant.helpers.CropsHelper;
-import com.agroassist.agroassistant.helpers.FieldsHelper;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
@@ -18,7 +16,7 @@ public class AddCropsController extends BaseController {
     private Button buttonBack;
 
     @FXML
-    private TextField textFieldNumberField;
+    private TextField textFieldNumber;
 
     @FXML
     private TextField textFieldBrutto;
@@ -48,8 +46,8 @@ public class AddCropsController extends BaseController {
     private Label dateLabel;
 
     @FXML
-    void initialize(){
-        buttonSaveCrops.setOnAction(event ->{
+    void initialize() {
+        buttonSaveCrops.setOnAction(event -> {
             CropsHelper helper = new CropsHelper();
             Label[] labels = new Label[]{
                     fieldNumberLabel,
@@ -58,18 +56,19 @@ public class AddCropsController extends BaseController {
                     nettoLabel,
                     dateLabel
             };
-            String fieldNumber = textFieldNumberField.getText();
+
+            String fieldNumber = textFieldNumber.getText();
             String brutto = textFieldBrutto.getText();
             String tara = textFieldTara.getText();
             String netto = textFieldNetto.getText();
             String year = textFieldYear.getText();
 
-            if (!helper.validateCrop(fieldNumber, brutto, tara, netto, year, labels)){
+            if (!helper.validateCrop(fieldNumber, brutto, tara, netto, year, labels)) {
                 System.out.println("Ошибка!!!!");
-            }
-            else if (addCrop(fieldNumber, Integer.parseInt(brutto), Integer.parseInt(tara), Integer.parseInt(netto), year)){
+            } else if (addCrop(fieldNumber, Integer.parseInt(brutto), Integer.parseInt(tara), Integer.parseInt(netto), year)) {
                 setScene(buttonBack, basePath + "forms/crops/Crops.fxml");
             }
+
         });
 
         buttonBack.setOnAction(event -> {

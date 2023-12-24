@@ -2,12 +2,9 @@ package com.agroassist.agroassistant.controllers.crops;
 
 import com.agroassist.agroassistant.controllers.BaseController;
 import com.agroassist.agroassistant.helpers.CropsHelper;
-import com.agroassist.agroassistant.helpers.FieldsHelper;
 import com.agroassist.agroassistant.models.Crop;
-import com.agroassist.agroassistant.models.Field;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
@@ -22,7 +19,7 @@ public class EditCropsController extends BaseController {
     private Button buttonBack;
 
     @FXML
-    private TextField textFieldNumberField;
+    private TextField textFieldNumber;
 
     @FXML
     private TextField textFieldBrutto;
@@ -52,7 +49,7 @@ public class EditCropsController extends BaseController {
     private Label dateLabel;
 
     @FXML
-    void initialize(){
+    void initialize() {
         CropsHelper helper = new CropsHelper();
         Label[] labels = new Label[]{
                 fieldNumberLabel,
@@ -61,25 +58,19 @@ public class EditCropsController extends BaseController {
                 nettoLabel,
                 dateLabel
         };
-        Crop oldCrop = getCrop(idCrop);
-        textFieldNumberField.setText(oldCrop.getFieldNumber());
-        textFieldBrutto.setText(oldCrop.getBrutto().toString());
-        textFieldNetto.setText(oldCrop.getNetto().toString());
-        textFieldTara.setText(oldCrop.getTara().toString());
-        textFieldYear.setText(oldCrop.getDate().toString());
 
-        buttonSaveCrops.setOnAction(event ->{
-            String fieldNumber = textFieldNumberField.getText();
+        fillOldCrop();
+
+        buttonSaveCrops.setOnAction(event -> {
+            String fieldNumber = textFieldNumber.getText();
             String brutto = textFieldBrutto.getText();
             String tara = textFieldTara.getText();
             String netto = textFieldNetto.getText();
             String year = textFieldYear.getText();
 
-            if (!helper.validateCrop(fieldNumber, brutto, tara, netto, year, labels)){
+            if (!helper.validateCrop(fieldNumber, brutto, tara, netto, year, labels)) {
                 System.out.println("Ошибка!!!!");
-            }
-            else if (editCrop(idCrop, fieldNumber, Integer.parseInt(brutto), Integer.parseInt(tara), Integer.parseInt(netto), year)){
-//                helper.changeDefaultLabel(labels);
+            } else if (editCrop(idCrop, fieldNumber, Integer.parseInt(brutto), Integer.parseInt(tara), Integer.parseInt(netto), year)) {
                 setScene(buttonBack, basePath + "forms/crops/Crops.fxml");
             }
         });
@@ -87,5 +78,14 @@ public class EditCropsController extends BaseController {
         buttonBack.setOnAction(event -> {
             setScene(buttonBack, basePath + "forms/crops/Crops.fxml");
         });
+    }
+
+    private void fillOldCrop() {
+        Crop oldCrop = getCrop(idCrop);
+        textFieldNumber.setText(oldCrop.getFieldNumber());
+        textFieldBrutto.setText(oldCrop.getBrutto().toString());
+        textFieldNetto.setText(oldCrop.getNetto().toString());
+        textFieldTara.setText(oldCrop.getTara().toString());
+        textFieldYear.setText(oldCrop.getDate().toString());
     }
 }

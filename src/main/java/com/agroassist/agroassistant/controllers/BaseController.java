@@ -13,7 +13,7 @@ public class BaseController extends DataBaseHandler {
 
     protected String basePath = "/com/agroassist/agroassistant/";
 
-    protected void setScene(Button button, String path){
+    protected void setScene(Button button, String path) {
 
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource(path));

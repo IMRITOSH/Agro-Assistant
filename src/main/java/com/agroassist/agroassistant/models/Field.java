@@ -1,6 +1,5 @@
 package com.agroassist.agroassistant.models;
 
-import java.time.Year;
 import java.util.Date;
 
 public class Field {
@@ -21,9 +20,9 @@ public class Field {
         this.year = year;
     }
 
-    public Field(){}
+    public Field() {}
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 

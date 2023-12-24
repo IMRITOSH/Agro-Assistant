@@ -57,7 +57,7 @@
       </Label>
       <Label fx:id="taraLabel" layoutX="472.0" layoutY="510.0" prefHeight="26.0" prefWidth="370.0" styleClass="labelError" stylesheets="@../../styles/main.css" textFill="#dd0505" visible="false" />
       <Label fx:id="dateLabel" layoutX="25.0" layoutY="510.0" prefHeight="26.0" prefWidth="370.0" styleClass="labelError" stylesheets="@../../styles/main.css" textFill="#dd0505" visible="false" />
-      <TextField fx:id="textFieldNumberField" layoutX="25.0" layoutY="348.0" prefHeight="42.0" prefWidth="241.0" promptText="Номер поля" styleClass="inputs" stylesheets="@../../styles/main.css">
+      <TextField fx:id="textFieldNumber" layoutX="25.0" layoutY="348.0" prefHeight="42.0" prefWidth="241.0" promptText="Номер поля" styleClass="inputs" stylesheets="@../../styles/main.css">
          <font>
             <Font size="16.0" />
          </font>

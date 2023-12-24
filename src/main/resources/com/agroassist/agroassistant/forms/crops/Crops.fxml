@@ -62,12 +62,7 @@
             <Font size="16.0" />
          </font>
       </Button>
-      <Button fx:id="buttonCompare" layoutX="290.0" layoutY="649.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="240.0" styleClass="buttons" stylesheets="@../../styles/main.css" text="Сравнить затраты на семена">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Button>
-      <Button fx:id="buttonCalculateGrow" layoutX="570.0" layoutY="649.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="208.0" styleClass="buttons" stylesheets="@../../styles/main.css" text="Рассчитать рост урожая">
+      <Button fx:id="buttonCalculateGrow" layoutX="400.0" layoutY="649.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="208.0" styleClass="buttons" stylesheets="@../../styles/main.css" text="Рассчитать рост урожая">
          <font>
             <Font size="16.0" />
          </font>

@@ -4,7 +4,7 @@ import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 
-public class MenuController extends BaseController{
+public class MenuController extends BaseController {
 
     @FXML
     private Button buttonCrops;
@@ -21,11 +21,11 @@ public class MenuController extends BaseController{
             setScene(buttonCrops, basePath + "forms/crops/Crops.fxml");
         });
 
-        buttonFields.setOnAction(event ->{
+        buttonFields.setOnAction(event -> {
             setScene(buttonFields, basePath + "forms/fields/Fields.fxml");
         });
 
-        buttonExit.setOnAction(event ->{
+        buttonExit.setOnAction(event -> {
             Platform.exit();
         });
     }

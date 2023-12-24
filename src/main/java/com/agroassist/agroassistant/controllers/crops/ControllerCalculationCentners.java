@@ -36,12 +36,18 @@ public class ControllerCalculationCentners extends BaseController {
             String numberField = textFieldNumberField.getText();
             String year = textFieldYear.getText();
 
-            int x = getAllNetto(numberField, year);
-            int area = getAreaField(numberField);
+            double x = getAllNettofromOneField(numberField, year);
+            double area = getAreaField(numberField);
 
-            int resultCalculate = (x/area)/100;
+            double resultCalculate = (x/area)/100;
 
-//            String resultText = String.format("", numberField, resultCalculate);
+            String resultText = String.format("С поля %s было получено %.3f центнеров", numberField, resultCalculate);
+
+            ResultTextArea.setText(resultText);
+        });
+
+        buttonBack.setOnAction(event -> {
+            setScene(buttonBack, basePath + "forms/crops/Crops.fxml");
         });
     }
 

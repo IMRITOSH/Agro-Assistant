@@ -1,11 +1,9 @@
 package com.agroassist.agroassistant.controllers.fields;
 
 import com.agroassist.agroassistant.controllers.BaseController;
-import com.agroassist.agroassistant.dao.DataBaseHandler;
 import com.agroassist.agroassistant.models.Field;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
-import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -57,12 +55,7 @@ public class FieldsController extends BaseController {
         ObservableList<Field> fieldsData = initData();
 
         // устанавливаем тип и значение которое должно хранится в колонке
-        ColumnID.setCellValueFactory(new PropertyValueFactory<Field, Integer>("id"));
-        ColumnFieldNumber.setCellValueFactory(new PropertyValueFactory<Field, String>("fieldNumber"));
-        ColumnArea.setCellValueFactory(new PropertyValueFactory<Field, String>("area"));
-        ColumnCrop.setCellValueFactory(new PropertyValueFactory<Field, String>("crop"));
-        ColumnKind.setCellValueFactory(new PropertyValueFactory<Field, String>("kind"));
-        ColumnDate.setCellValueFactory(new PropertyValueFactory<Field, Date>("date"));
+        setColumnsValue();
 
         // заполняем таблицу данными
         TableFields.setItems(fieldsData);
@@ -82,18 +75,11 @@ public class FieldsController extends BaseController {
                 System.out.println("Поле удалено");
             }
 
-            ObservableList<Field> fieldsData1 = initData();
-
             // устанавливаем тип и значение которое должно хранится в колонке
-            ColumnID.setCellValueFactory(new PropertyValueFactory<Field, Integer>("id"));
-            ColumnFieldNumber.setCellValueFactory(new PropertyValueFactory<Field, String>("fieldNumber"));
-            ColumnArea.setCellValueFactory(new PropertyValueFactory<Field, String>("area"));
-            ColumnCrop.setCellValueFactory(new PropertyValueFactory<Field, String>("crop"));
-            ColumnKind.setCellValueFactory(new PropertyValueFactory<Field, String>("kind"));
-            ColumnDate.setCellValueFactory(new PropertyValueFactory<Field, Date>("date"));
+            setColumnsValue();
 
             // заполняем таблицу данными
-            TableFields.setItems(fieldsData1);
+            TableFields.setItems(initData());
         });
 
         buttonAddField.setOnAction(event -> {
@@ -113,5 +99,14 @@ public class FieldsController extends BaseController {
 
     private ObservableList<Field> initData(){
         return getFields();
+    }
+
+    private void setColumnsValue() {
+        ColumnID.setCellValueFactory(new PropertyValueFactory<Field, Integer>("id"));
+        ColumnFieldNumber.setCellValueFactory(new PropertyValueFactory<Field, String>("fieldNumber"));
+        ColumnArea.setCellValueFactory(new PropertyValueFactory<Field, String>("area"));
+        ColumnCrop.setCellValueFactory(new PropertyValueFactory<Field, String>("crop"));
+        ColumnKind.setCellValueFactory(new PropertyValueFactory<Field, String>("kind"));
+        ColumnDate.setCellValueFactory(new PropertyValueFactory<Field, Date>("date"));
     }
 }

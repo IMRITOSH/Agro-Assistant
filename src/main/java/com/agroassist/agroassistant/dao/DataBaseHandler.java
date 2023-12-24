@@ -260,13 +260,32 @@ public abstract class DataBaseHandler extends Configs {
         return crop;
     }
 
-    public Integer getAllNetto(String fieldNumber, String date) {
+    public Integer getAllNettofromOneField(String fieldNumber, String date) {
         int allNetto = 0;
 
         try (Connection conn = getDbConnection()) {
             Statement statement = conn.createStatement();
-            ResultSet resultSet = statement.executeQuery(String.format("SELECT SUM(Netto) FROM Crops WHERE Field_Number = %s and YEAR(Date) = %s",
+            ResultSet resultSet = statement.executeQuery(String.format("SELECT SUM(Netto) FROM Crops WHERE Field_Number = '%s' and YEAR(Date) = %s",
                     fieldNumber, date));
+            while (resultSet.next()) {
+                allNetto = resultSet.getInt(1);
+            }
+
+            return allNetto;
+        } catch (Exception ex) {
+            System.out.println("Connection failed...");
+
+            System.out.println(ex.getMessage());
+        }
+        return allNetto;
+    }
+
+    public Integer getAllNetto(String date) {
+        int allNetto = 0;
+
+        try (Connection conn = getDbConnection()) {
+            Statement statement = conn.createStatement();
+            ResultSet resultSet = statement.executeQuery(String.format("SELECT SUM(Netto) FROM Crops WHERE YEAR(Date) = %s", date));
             while (resultSet.next()) {
                 allNetto = resultSet.getInt(1);
             }
@@ -285,7 +304,7 @@ public abstract class DataBaseHandler extends Configs {
 
         try (Connection conn = getDbConnection()) {
             Statement statement = conn.createStatement();
-            ResultSet resultSet = statement.executeQuery(String.format("SELECT area FROM Fields WHERE number_field = %s", fieldNumber));
+            ResultSet resultSet = statement.executeQuery(String.format("SELECT area FROM Fields WHERE number_field = '%s'", fieldNumber));
             while (resultSet.next()) {
                 area = resultSet.getInt(1);
             }

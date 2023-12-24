@@ -3,7 +3,7 @@ package com.agroassist.agroassistant.controllers;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 
-public class HelloController extends BaseController{
+public class HelloController extends BaseController {
 
     @FXML
     private Button enterButton;
