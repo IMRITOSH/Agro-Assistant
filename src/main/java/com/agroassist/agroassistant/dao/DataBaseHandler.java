@@ -72,7 +72,7 @@ public abstract class DataBaseHandler extends Configs {
             }
             return crops;
         } catch (Exception ex) {
-            System.out.println("Connection failed...");
+            System.out.println("Ошибка подключения");
 
             System.out.println(ex.getMessage());
         }
