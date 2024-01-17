@@ -77,14 +77,12 @@ public class CropsController extends BaseController {
 
         buttonDeleteCrops.setOnAction(event -> {
             if (deleteCrop(idCrop)) {
-                System.out.println("Данные об урожае удалены");
+                // устанавливаем тип и значение которое должно хранится в колонке
+                setColumnsValue();
+
+                // заполняем таблицу данными
+                TableCrops.setItems(initData());
             }
-
-            // устанавливаем тип и значение которое должно хранится в колонке
-            setColumnsValue();
-
-            // заполняем таблицу данными
-            TableCrops.setItems(initData());
         });
 
         buttonAddCrops.setOnAction(event -> {

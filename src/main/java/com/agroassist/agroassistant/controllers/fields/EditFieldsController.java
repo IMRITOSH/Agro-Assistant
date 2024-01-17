@@ -1,14 +1,11 @@
 package com.agroassist.agroassistant.controllers.fields;
 
 import com.agroassist.agroassistant.helpers.FieldsHelper;
-import com.agroassist.agroassistant.models.Crop;
 import com.agroassist.agroassistant.models.Field;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-
-import static com.agroassist.agroassistant.controllers.crops.CropsController.idCrop;
 
 public class EditFieldsController extends FieldsController {
 

@@ -6,11 +6,11 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.agroassist.agroassistant.controllers.MenuController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.agroassist.agroassistant.controllers.MenuController">
    <children>
       <Pane layoutY="-1.0" prefHeight="217.0" prefWidth="1080.0" styleClass="backgroundColor" stylesheets="@../styles/main.css">
          <children>
-            <Label layoutX="442.0" layoutY="68.0" prefHeight="66.0" prefWidth="188.0" text="Меню">
+            <Label layoutX="327.0" layoutY="62.0" prefHeight="93.0" prefWidth="427.0" text="Главное меню">
                <font>
                   <Font size="64.0" />
                </font>

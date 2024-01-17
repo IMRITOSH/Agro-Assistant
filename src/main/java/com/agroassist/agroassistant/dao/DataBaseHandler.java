@@ -226,7 +226,6 @@ public abstract class DataBaseHandler extends Configs {
 
         } catch (Exception ex) {
             System.out.println("Не удалось удалить данные об урожае");
-
             System.out.println(ex.getMessage());
         }
 
