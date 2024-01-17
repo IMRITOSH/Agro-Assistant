@@ -20,7 +20,7 @@ public class Crop {
         this.date = date;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 

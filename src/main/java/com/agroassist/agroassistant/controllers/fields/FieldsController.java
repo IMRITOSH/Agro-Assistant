@@ -66,6 +66,8 @@ public class FieldsController extends BaseController {
             public void changed(ObservableValue<? extends Field> val, Field oldVal, Field newVal){
                 if(newVal != null){
                     idField = newVal.getId();
+                    buttonEditField.setDisable(false);
+                    buttonDeleteField.setDisable(false);
                 }
             }
         });

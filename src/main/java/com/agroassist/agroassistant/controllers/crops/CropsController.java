@@ -71,6 +71,8 @@ public class CropsController extends BaseController {
             public void changed(ObservableValue<? extends Crop> val, Crop oldVal, Crop newVal) {
                 if (newVal != null) {
                     idCrop = newVal.getId();
+                    buttonEditCrops.setDisable(false);
+                    buttonDeleteCrops.setDisable(false);
                 }
             }
         });

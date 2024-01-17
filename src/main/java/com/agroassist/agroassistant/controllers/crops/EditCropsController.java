@@ -19,6 +19,9 @@ public class EditCropsController extends BaseController {
     private Button buttonBack;
 
     @FXML
+    private TextField textFieldCropId;
+
+    @FXML
     private TextField textFieldNumber;
 
     @FXML
@@ -69,7 +72,7 @@ public class EditCropsController extends BaseController {
             String year = textFieldYear.getText();
 
             if (!helper.validateCrop(fieldNumber, brutto, tara, netto, year, labels)) {
-                System.out.println("Ошибка!!!!");
+                System.out.println("Ошибка!");
             } else if (editCrop(idCrop, fieldNumber, Integer.parseInt(brutto), Integer.parseInt(tara), Integer.parseInt(netto), year)) {
                 setScene(buttonBack, basePath + "forms/crops/Crops.fxml");
             }
@@ -82,6 +85,7 @@ public class EditCropsController extends BaseController {
 
     private void fillOldCrop() {
         Crop oldCrop = getCrop(idCrop);
+        textFieldCropId.setText(oldCrop.getId().toString());
         textFieldNumber.setText(oldCrop.getFieldNumber());
         textFieldBrutto.setText(oldCrop.getBrutto().toString());
         textFieldNetto.setText(oldCrop.getNetto().toString());
