@@ -22,9 +22,6 @@ public class AddCropsController extends BaseController {
     private TextField textFieldBrutto;
 
     @FXML
-    private TextField textFieldNetto;
-
-    @FXML
     private TextField textFieldTara;
 
     @FXML
@@ -35,9 +32,6 @@ public class AddCropsController extends BaseController {
 
     @FXML
     private Label bruttoLabel;
-
-    @FXML
-    private Label nettoLabel;
 
     @FXML
     private Label taraLabel;
@@ -53,18 +47,18 @@ public class AddCropsController extends BaseController {
                     fieldNumberLabel,
                     bruttoLabel,
                     taraLabel,
-                    nettoLabel,
                     dateLabel
             };
 
             String fieldNumber = textFieldNumber.getText();
             String brutto = textFieldBrutto.getText();
             String tara = textFieldTara.getText();
-            String netto = textFieldNetto.getText();
+            int netto;
             String date = textFieldDate.getText();
 
-            if (helper.validateCrop(fieldNumber, brutto, tara, netto, date, labels)) {
-                if (addCrop(fieldNumber, Integer.parseInt(brutto), Integer.parseInt(tara), Integer.parseInt(netto), date)) {
+            if (helper.validateCrop(fieldNumber, brutto, tara, date, labels)) {
+                netto = Integer.parseInt(brutto) - Integer.parseInt(tara);
+                if (addCrop(fieldNumber, Integer.parseInt(brutto), Integer.parseInt(tara), netto, date)) {
                     setScene(buttonBack, basePath + "forms/crops/Crops.fxml");
                 }
             } 

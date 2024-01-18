@@ -28,9 +28,6 @@ public class EditCropsController extends BaseController {
     private TextField textFieldBrutto;
 
     @FXML
-    private TextField textFieldNetto;
-
-    @FXML
     private TextField textFieldTara;
 
     @FXML
@@ -41,9 +38,6 @@ public class EditCropsController extends BaseController {
 
     @FXML
     private Label bruttoLabel;
-
-    @FXML
-    private Label nettoLabel;
 
     @FXML
     private Label taraLabel;
@@ -58,7 +52,6 @@ public class EditCropsController extends BaseController {
                 fieldNumberLabel,
                 bruttoLabel,
                 taraLabel,
-                nettoLabel,
                 dateLabel
         };
 
@@ -68,11 +61,12 @@ public class EditCropsController extends BaseController {
             String fieldNumber = textFieldNumber.getText();
             String brutto = textFieldBrutto.getText();
             String tara = textFieldTara.getText();
-            String netto = textFieldNetto.getText();
+            int netto;
             String year = textFieldYear.getText();
 
-            if (helper.validateCrop(fieldNumber, brutto, tara, netto, year, labels)) {
-                if (editCrop(idCrop, fieldNumber, Integer.parseInt(brutto), Integer.parseInt(tara), Integer.parseInt(netto), year)) {
+            if (helper.validateCrop(fieldNumber, brutto, tara, year, labels)) {
+                netto = Integer.parseInt(brutto) - Integer.parseInt(tara);
+                if (editCrop(idCrop, fieldNumber, Integer.parseInt(brutto), Integer.parseInt(tara), netto, year)) {
                     setScene(buttonBack, basePath + "forms/crops/Crops.fxml");
                 }
             }
@@ -88,7 +82,6 @@ public class EditCropsController extends BaseController {
         textFieldCropId.setText(oldCrop.getId().toString());
         textFieldNumber.setText(oldCrop.getFieldNumber());
         textFieldBrutto.setText(oldCrop.getBrutto().toString());
-        textFieldNetto.setText(oldCrop.getNetto().toString());
         textFieldTara.setText(oldCrop.getTara().toString());
         textFieldYear.setText(oldCrop.getDate().toString());
     }

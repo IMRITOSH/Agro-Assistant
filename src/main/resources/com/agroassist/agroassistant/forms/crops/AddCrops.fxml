@@ -33,11 +33,6 @@
                 <Font size="16.0" />
             </font>
         </TextField>
-        <TextField fx:id="textFieldNetto" layoutX="472.0" layoutY="548.0" prefHeight="42.0" prefWidth="241.0" promptText="Нетто" styleClass="inputs" stylesheets="@../../styles/main.css">
-            <font>
-                <Font size="16.0" />
-            </font>
-        </TextField>
         <TextField fx:id="textFieldDate" layoutX="25.0" layoutY="448.0" prefHeight="42.0" prefWidth="241.0" promptText="Дата" styleClass="inputs" stylesheets="@../../styles/main.css">
             <font>
                 <Font size="16.0" />
@@ -50,11 +45,6 @@
       </Button>
       <Label fx:id="fieldNumberLabel" layoutX="25.0" layoutY="410.0" prefHeight="26.0" prefWidth="370.0" styleClass="labelError" stylesheets="@../../styles/main.css" visible="false" />
       <Label fx:id="bruttoLabel" layoutX="472.0" layoutY="410.0" prefHeight="26.0" prefWidth="370.0" styleClass="labelError" stylesheets="@../../styles/main.css" textFill="#dd0505" visible="false" />
-      <Label fx:id="nettoLabel" layoutX="472.0" layoutY="610.0" prefHeight="26.0" prefWidth="370.0" styleClass="labelError" stylesheets="@../../styles/main.css" textFill="#dd0505" visible="false">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Label>
       <Label fx:id="taraLabel" layoutX="472.0" layoutY="510.0" prefHeight="26.0" prefWidth="370.0" styleClass="labelError" stylesheets="@../../styles/main.css" textFill="#dd0505" visible="false" />
       <Label fx:id="dateLabel" layoutX="25.0" layoutY="510.0" prefHeight="26.0" prefWidth="370.0" styleClass="labelError" stylesheets="@../../styles/main.css" textFill="#dd0505" visible="false" />
       <TextField fx:id="textFieldNumber" layoutX="25.0" layoutY="348.0" prefHeight="42.0" prefWidth="241.0" promptText="Номер поля" styleClass="inputs" stylesheets="@../../styles/main.css">
