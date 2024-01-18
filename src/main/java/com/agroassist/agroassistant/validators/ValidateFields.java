@@ -53,13 +53,13 @@ public class ValidateFields {
         return "";
     }
 
-    public String checkDate(String year) {
+    public String checkDate(String date) {
 
-        if (year.isEmpty()) {
+        if (date.isEmpty()) {
             return "Поле не должно быть пустым";
-        } else if (year.length() > 10) {
+        } else if (date.length() > 10) {
             return "Дата не должна превышать 10 символов!";
-        } else if (!year.matches("\\d{4}-\\d{2}-\\d{2}")) {
+        } else if (!date.matches("\\d{4}-\\d{2}-\\d{2}")) {
             return "Поле год должно соответствовать шаблону: ГГГГ-ММ-ДД.";
         }
 

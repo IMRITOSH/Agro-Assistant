@@ -8,7 +8,7 @@ public class Field {
     private Integer area;
     private String crop;
     private String kind;
-    private Date year;
+    private Date date;
 
     public Field(int id, String fieldNumber, Integer area, String crop,
                  String kind, Date year) {
@@ -17,7 +17,7 @@ public class Field {
         this.area = area;
         this.crop = crop;
         this.kind = kind;
-        this.year = year;
+        this.date = year;
     }
 
     public Field() {}
@@ -63,10 +63,10 @@ public class Field {
     }
 
     public Date getDate() {
-        return year;
+        return date;
     }
 
-    public void setDate(Date year) {
-        this.year = year;
+    public void setDate(Date date) {
+        this.date = date;
     }
 }

@@ -71,10 +71,10 @@ public class EditCropsController extends BaseController {
             String netto = textFieldNetto.getText();
             String year = textFieldYear.getText();
 
-            if (!helper.validateCrop(fieldNumber, brutto, tara, netto, year, labels)) {
-                System.out.println("Ошибка!");
-            } else if (editCrop(idCrop, fieldNumber, Integer.parseInt(brutto), Integer.parseInt(tara), Integer.parseInt(netto), year)) {
-                setScene(buttonBack, basePath + "forms/crops/Crops.fxml");
+            if (helper.validateCrop(fieldNumber, brutto, tara, netto, year, labels)) {
+                if (editCrop(idCrop, fieldNumber, Integer.parseInt(brutto), Integer.parseInt(tara), Integer.parseInt(netto), year)) {
+                    setScene(buttonBack, basePath + "forms/crops/Crops.fxml");
+                }
             }
         });
 

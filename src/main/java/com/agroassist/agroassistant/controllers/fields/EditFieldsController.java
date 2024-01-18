@@ -31,7 +31,7 @@ public class EditFieldsController extends FieldsController {
     private TextField textFieldSort;
 
     @FXML
-    private TextField textFieldYear;
+    private TextField textFieldDate;
 
     @FXML
     private Label fieldNumberLabel;
@@ -66,12 +66,12 @@ public class EditFieldsController extends FieldsController {
             String area = textFieldArea.getText();
             String crop = textFieldCrop.getText();
             String kind = textFieldSort.getText();
-            String year = textFieldYear.getText();
+            String date = textFieldDate.getText();
 
-            if (!helper.validateField(fieldNumber, area, crop, kind, year, labels)) {
-                System.out.println("Ошибка!!!!");
-            } else if (editField(idField, fieldNumber, Integer.parseInt(area), crop, kind, year)) {
-                setScene(buttonBack, basePath + "forms/fields/Fields.fxml");
+            if (helper.validateField(fieldNumber, area, crop, kind, date, labels)) {
+                if (editField(idField, fieldNumber, Integer.parseInt(area), crop, kind, date)) {
+                    setScene(buttonBack, basePath + "forms/fields/Fields.fxml");
+                }
             }
         });
 
@@ -87,6 +87,6 @@ public class EditFieldsController extends FieldsController {
         textFieldArea.setText(oldFiled.getArea().toString());
         textFieldCrop.setText(oldFiled.getCrop());
         textFieldSort.setText(oldFiled.getKind());
-        textFieldYear.setText(oldFiled.getDate().toString());
+        textFieldDate.setText(oldFiled.getDate().toString());
     }
 }

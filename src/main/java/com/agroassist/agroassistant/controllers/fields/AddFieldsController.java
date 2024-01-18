@@ -30,7 +30,7 @@ public class AddFieldsController extends BaseController {
     private TextField textFieldSort;
 
     @FXML
-    private TextField textFieldYear;
+    private TextField textFieldDate;
 
     @FXML
     private Label fieldNumberLabel;
@@ -63,14 +63,13 @@ public class AddFieldsController extends BaseController {
             String area = textFieldArea.getText();
             String crop = textFieldCrop.getText();
             String kind = textFieldSort.getText();
-            String year = textFieldYear.getText();
+            String date = textFieldDate.getText();
 
-            if (!helper.validateField(fieldNumber, area, crop, kind, year, labels)) {
-                System.out.println("Ошибка!!!!");
-            } else if (addField(fieldNumber, Integer.parseInt(area), crop, kind, year)) {
-                setScene(buttonBack, basePath + "forms/fields/Fields.fxml");
+            if (helper.validateField(fieldNumber, area, crop, kind, date, labels)) {
+                if (addField(fieldNumber, Integer.parseInt(area), crop, kind, date)) {
+                    setScene(buttonBack, basePath + "forms/fields/Fields.fxml");
+                }
             }
-
         });
 
         buttonBack.setOnAction(event -> {

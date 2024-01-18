@@ -60,7 +60,7 @@ public class ValidateCrops {
         } else if (year.length() > 10) {
             return "Дата не должна превышать 10 символов!";
         } else if (!year.matches("\\d{4}-\\d{2}-\\d{2}")) {
-            return "Поле год должно соответствовать шаблону: ГГГГ-ММ-ДД.";
+            return "Поле дата должно соответствовать шаблону: ГГГГ-ММ-ДД.";
         }
 
         return "";

@@ -36,14 +36,14 @@ public abstract class DataBaseHandler extends Configs {
                 int area = resultSet.getInt(3);
                 String crop = resultSet.getString(4);
                 String kind = resultSet.getString(5);
-                Date year = resultSet.getDate(6);
+                Date date = resultSet.getDate(6);
 
-                field = new Field(id, fieldNumber, area, crop, kind, year);
+                field = new Field(id, fieldNumber, area, crop, kind, date);
                 fields.add(field);
             }
             return fields;
         } catch (Exception ex) {
-            System.out.println("Connection failed...");
+            System.out.println("Не получилось получить данные о полях.");
 
             System.out.println(ex.getMessage());
         }
@@ -72,7 +72,7 @@ public abstract class DataBaseHandler extends Configs {
             }
             return crops;
         } catch (Exception ex) {
-            System.out.println("Ошибка подключения");
+            System.out.println("Не получилось получить данные о урожае.");
 
             System.out.println(ex.getMessage());
         }
@@ -80,9 +80,9 @@ public abstract class DataBaseHandler extends Configs {
         return crops;
     }
 
-    public Boolean addField(String fieldNumber, int area, String crop, String kind, String year) {
+    public Boolean addField(String fieldNumber, int area, String crop, String kind, String date) {
         String insertQuery = String.format("INSERT fields(number_field, area, crop, kind, year) VALUES ('%s', %d, '%s', '%s', '%s')",
-                fieldNumber, area, crop, kind, year);
+                fieldNumber, area, crop, kind, date);
 
         try (Connection conn = getDbConnection()) {
             Statement statement = conn.createStatement();
@@ -94,7 +94,7 @@ public abstract class DataBaseHandler extends Configs {
             }
 
         } catch (Exception ex) {
-            System.out.println("Не удалось добавить поле");
+            System.out.println("Не удалось добавить данные о поле");
 
             System.out.println(ex.getMessage());
         }
@@ -102,9 +102,9 @@ public abstract class DataBaseHandler extends Configs {
         return false;
     }
 
-    public Boolean editField(int idField, String fieldNumber, int area, String crop, String kind, String year) {
+    public Boolean editField(int idField, String fieldNumber, int area, String crop, String kind, String date) {
         String updateQuery = String.format("UPDATE fields SET number_field = '%s', area = %d, crop = '%s', kind = '%s', year = '%s' WHERE id = %d",
-                fieldNumber, area, crop, kind, year, idField);
+                fieldNumber, area, crop, kind, date, idField);
 
         try (Connection conn = getDbConnection()) {
             Statement statement = conn.createStatement();
@@ -135,7 +135,7 @@ public abstract class DataBaseHandler extends Configs {
             }
 
         } catch (Exception ex) {
-            System.out.println("Не удалось удалить поле");
+            System.out.println("Не удалось удалить данные о поле");
 
             System.out.println(ex.getMessage());
         }
@@ -162,7 +162,7 @@ public abstract class DataBaseHandler extends Configs {
             }
             return field;
         } catch (Exception ex) {
-            System.out.println("Connection failed...");
+            System.out.println("Не получилось получить данные о поле.");
 
             System.out.println(ex.getMessage());
         }
@@ -170,9 +170,9 @@ public abstract class DataBaseHandler extends Configs {
         return field;
     }
 
-    public Boolean addCrop(String fieldNumber, int brutto, int tara, int netto, String year) {
+    public Boolean addCrop(String fieldNumber, int brutto, int tara, int netto, String date) {
         String insertQuery = String.format("INSERT crops(Field_Number, Brutto, Tara, Netto, Date) VALUES ('%s', %d, '%d', '%d', '%s')",
-                fieldNumber, brutto, tara, netto, year);
+                fieldNumber, brutto, tara, netto, date);
 
         try (Connection conn = getDbConnection()) {
             Statement statement = conn.createStatement();
@@ -192,9 +192,9 @@ public abstract class DataBaseHandler extends Configs {
         return false;
     }
 
-    public Boolean editCrop(int idCrop, String fieldNumber, int brutto, int tara, int netto, String year) {
+    public Boolean editCrop(int idCrop, String fieldNumber, int brutto, int tara, int netto, String date) {
         String updateQuery = String.format("UPDATE crops SET Field_Number = '%s', Brutto = %d, Tara = '%d', Netto = '%d', Date = '%s' WHERE id = %d",
-                fieldNumber, brutto, tara, netto, year, idCrop);
+                fieldNumber, brutto, tara, netto, date, idCrop);
 
         try (Connection conn = getDbConnection()) {
             Statement statement = conn.createStatement();
@@ -214,11 +214,11 @@ public abstract class DataBaseHandler extends Configs {
         return false;
     }
 
-    public Boolean deleteCrop(int id) {
+    public Boolean deleteCrop(int idCrop) {
         try (Connection conn = getDbConnection()) {
             Statement statement = conn.createStatement();
 
-            int rows = statement.executeUpdate(String.format("DELETE FROM crops WHERE id = %d", id));
+            int rows = statement.executeUpdate(String.format("DELETE FROM crops WHERE id = %d", idCrop));
 
             if (rows > 0) {
                 return true;
@@ -251,7 +251,7 @@ public abstract class DataBaseHandler extends Configs {
             }
             return crop;
         } catch (Exception ex) {
-            System.out.println("Connection failed...");
+            System.out.println("Не получилось получить данные о урожае.");
 
             System.out.println(ex.getMessage());
         }
@@ -259,39 +259,40 @@ public abstract class DataBaseHandler extends Configs {
         return crop;
     }
 
-    public Integer getAllNettofromOneField(String fieldNumber, String date) {
+    public Integer getAllNettofromOneField(String fieldNumber, String year) {
         int allNetto = 0;
 
         try (Connection conn = getDbConnection()) {
             Statement statement = conn.createStatement();
             ResultSet resultSet = statement.executeQuery(String.format("SELECT SUM(Netto) FROM Crops WHERE Field_Number = '%s' and YEAR(Date) = %s",
-                    fieldNumber, date));
+                    fieldNumber, year));
             while (resultSet.next()) {
                 allNetto = resultSet.getInt(1);
             }
 
             return allNetto;
         } catch (Exception ex) {
-            System.out.println("Connection failed...");
+            System.out.println("Не получилось получить данные.");
 
             System.out.println(ex.getMessage());
         }
+
         return allNetto;
     }
 
-    public Integer getAllNetto(String date) {
+    public Integer getAllNetto(String year) {
         int allNetto = 0;
 
         try (Connection conn = getDbConnection()) {
             Statement statement = conn.createStatement();
-            ResultSet resultSet = statement.executeQuery(String.format("SELECT SUM(Netto) FROM Crops WHERE YEAR(Date) = %s", date));
+            ResultSet resultSet = statement.executeQuery(String.format("SELECT SUM(Netto) FROM Crops WHERE YEAR(Date) = %s", year));
             while (resultSet.next()) {
                 allNetto = resultSet.getInt(1);
             }
 
             return allNetto;
         } catch (Exception ex) {
-            System.out.println("Connection failed...");
+            System.out.println("Не получилось получить данные.");
 
             System.out.println(ex.getMessage());
         }
@@ -310,7 +311,7 @@ public abstract class DataBaseHandler extends Configs {
 
             return area;
         } catch (Exception ex) {
-            System.out.println("Connection failed...");
+            System.out.println("Не получилось получить данные.");
 
             System.out.println(ex.getMessage());
         }

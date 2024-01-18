@@ -74,14 +74,12 @@ public class FieldsController extends BaseController {
 
         buttonDeleteField.setOnAction(event ->{
             if (deleteField(idField)){
-                System.out.println("Поле удалено");
+                // устанавливаем тип и значение которое должно хранится в колонке
+                setColumnsValue();
+
+                // заполняем таблицу данными
+                TableFields.setItems(initData());
             }
-
-            // устанавливаем тип и значение которое должно хранится в колонке
-            setColumnsValue();
-
-            // заполняем таблицу данными
-            TableFields.setItems(initData());
         });
 
         buttonAddField.setOnAction(event -> {
@@ -89,9 +87,7 @@ public class FieldsController extends BaseController {
         });
 
         buttonEditField.setOnAction(event -> {
-            if (idField != 0) {
                 setScene(buttonEditField, basePath + "forms/fields/EditFields.fxml");
-            }
         });
 
         buttonBack.setOnAction(event -> {

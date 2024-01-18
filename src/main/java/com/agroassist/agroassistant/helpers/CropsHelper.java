@@ -4,7 +4,7 @@ import com.agroassist.agroassistant.validators.ValidateCrops;
 import javafx.scene.control.Label;
 
 public class CropsHelper {
-    public Boolean validateCrop(String fieldsNumber, String brutto, String tara, String netto, String year, Label[] labels) {
+    public Boolean validateCrop(String fieldsNumber, String brutto, String tara, String netto, String date, Label[] labels) {
         ValidateCrops validator = new ValidateCrops();
         boolean flag = true;
 
@@ -48,7 +48,7 @@ public class CropsHelper {
             labels[3].setVisible(true);
         }
 
-        String errorDate = validator.checkDate(year);
+        String errorDate = validator.checkDate(date);
         if (!errorDate.isEmpty()) {
             labels[4].setText(errorDate);
             labels[4].setVisible(true);

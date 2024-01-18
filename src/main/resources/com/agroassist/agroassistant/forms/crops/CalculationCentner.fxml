@@ -8,11 +8,11 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="700.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.agroassist.agroassistant.controllers.crops.ControllerCalculationCentners">
+<AnchorPane prefHeight="700.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.agroassist.agroassistant.controllers.crops.CalculationCentnersController">
     <children>
         <Pane prefHeight="234.0" prefWidth="1080.0" styleClass="backgroundColor" stylesheets="@../../styles/main.css">
             <children>
-                <Label layoutX="281.0" layoutY="71.0" text="Расчет цетнеров">
+                <Label layoutX="281.0" layoutY="71.0" text="Расчет центнеров">
                     <font>
                         <Font size="64.0" />
                     </font>

@@ -38,7 +38,7 @@
                 <Font size="16.0" />
             </font>
         </TextField>
-        <TextField fx:id="textFieldYear" layoutX="25.0" layoutY="448.0" prefHeight="42.0" prefWidth="241.0" promptText="Год" styleClass="inputs" stylesheets="@../../styles/main.css">
+        <TextField fx:id="textFieldDate" layoutX="25.0" layoutY="448.0" prefHeight="42.0" prefWidth="241.0" promptText="Дата" styleClass="inputs" stylesheets="@../../styles/main.css">
             <font>
                 <Font size="16.0" />
             </font>

@@ -8,11 +8,11 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="700.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.agroassist.agroassistant.controllers.crops.ControllerCalculationCropGrowth">
+<AnchorPane prefHeight="700.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.agroassist.agroassistant.controllers.crops.CalculationCropGrowthController">
     <children>
         <Pane prefHeight="234.0" prefWidth="1080.0" styleClass="backgroundColor" stylesheets="@../../styles/main.css">
             <children>
-                <Label layoutX="220.0" layoutY="71.0" text="Рассчет роста урожая">
+                <Label layoutX="220.0" layoutY="71.0" text="Расчет роста урожая">
                     <font>
                         <Font size="64.0" />
                     </font>
@@ -34,8 +34,8 @@
                 <Font size="16.0" />
             </font>
         </Button>
-        <Label fx:id="fieldNumberLabel" layoutX="25.0" layoutY="410.0" prefHeight="26.0" prefWidth="370.0" styleClass="labelError" stylesheets="@../../styles/main.css" visible="false" />
-        <Label fx:id="dateLabel" layoutX="25.0" layoutY="570.0" prefHeight="26.0" prefWidth="370.0" styleClass="labelError" stylesheets="@../../styles/main.css" textFill="#dd0505" visible="false" />
+        <Label fx:id="LabelYearX" layoutX="25.0" layoutY="410.0" prefHeight="26.0" prefWidth="370.0" styleClass="labelError" stylesheets="@../../styles/main.css" visible="false" />
+        <Label fx:id="LabelYearY" layoutX="25.0" layoutY="570.0" prefHeight="26.0" prefWidth="370.0" styleClass="labelError" stylesheets="@../../styles/main.css" textFill="#dd0505" visible="false" />
         <TextField fx:id="textFieldYearX" layoutX="25.0" layoutY="348.0" prefHeight="42.0" prefWidth="241.0" promptText="Год X" styleClass="inputs" stylesheets="@../../styles/main.css">
             <font>
                 <Font size="16.0" />
