@@ -11,13 +11,13 @@ public class Field {
     private Date date;
 
     public Field(int id, String fieldNumber, Integer area, String crop,
-                 String kind, Date year) {
+                 String kind, Date date) {
         this.id = id;
         this.fieldNumber = fieldNumber;
         this.area = area;
         this.crop = crop;
         this.kind = kind;
-        this.date = year;
+        this.date = date;
     }
 
     public Field() {}

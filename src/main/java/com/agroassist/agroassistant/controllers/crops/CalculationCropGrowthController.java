@@ -66,7 +66,6 @@ public class CalculationCropGrowthController extends BaseController {
                     } else {
                         resultText = String.format("По сравнению с %s годом урожайность в %s году не изменилась", firstYear, secondYear);
                     }
-
                     textAreaResult.setText(resultText);
                 }
             }

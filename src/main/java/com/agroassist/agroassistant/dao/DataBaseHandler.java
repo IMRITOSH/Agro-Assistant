@@ -43,11 +43,9 @@ public abstract class DataBaseHandler extends Configs {
             }
             return fields;
         } catch (Exception ex) {
-            System.out.println("Не получилось получить данные о полях.");
-
+            System.out.println("Не удалось получить данные о полях.");
             System.out.println(ex.getMessage());
         }
-
         return fields;
     }
 
@@ -72,8 +70,7 @@ public abstract class DataBaseHandler extends Configs {
             }
             return crops;
         } catch (Exception ex) {
-            System.out.println("Не получилось получить данные о урожае.");
-
+            System.out.println("Не удалось получить данные о урожае.");
             System.out.println(ex.getMessage());
         }
 
@@ -251,11 +248,9 @@ public abstract class DataBaseHandler extends Configs {
             }
             return crop;
         } catch (Exception ex) {
-            System.out.println("Не получилось получить данные о урожае.");
-
+            System.out.println("Не удалось получить данные об урожае.");
             System.out.println(ex.getMessage());
         }
-
         return crop;
     }
 
@@ -269,14 +264,12 @@ public abstract class DataBaseHandler extends Configs {
             while (resultSet.next()) {
                 allNetto = resultSet.getInt(1);
             }
-
             return allNetto;
         } catch (Exception ex) {
-            System.out.println("Не получилось получить данные.");
+            System.out.println("Не удалось получить данные.");
 
             System.out.println(ex.getMessage());
         }
-
         return allNetto;
     }
 
@@ -292,8 +285,7 @@ public abstract class DataBaseHandler extends Configs {
 
             return allNetto;
         } catch (Exception ex) {
-            System.out.println("Не получилось получить данные.");
-
+            System.out.println("Не удалось получить данные.");
             System.out.println(ex.getMessage());
         }
         return allNetto;
@@ -311,7 +303,7 @@ public abstract class DataBaseHandler extends Configs {
 
             return area;
         } catch (Exception ex) {
-            System.out.println("Не получилось получить данные.");
+            System.out.println("Не удалось получить данные.");
 
             System.out.println(ex.getMessage());
         }

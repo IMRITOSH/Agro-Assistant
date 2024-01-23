@@ -61,8 +61,7 @@ public class AddCropsController extends BaseController {
                 if (addCrop(fieldNumber, Integer.parseInt(brutto), Integer.parseInt(tara), netto, date)) {
                     setScene(buttonBack, basePath + "forms/crops/Crops.fxml");
                 }
-            } 
-
+            }
         });
 
         buttonBack.setOnAction(event -> {
